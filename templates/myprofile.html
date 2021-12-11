@@ -61,10 +61,13 @@
 
     <main>
       <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"></a>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom fixed-top" style="background-color: whitesmoke;">
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <image src="{{ url_for('static', filename='images/user.png') }}" style="width: 40px; height:40px; margin-left: 5%;"/>
+            <span class="fs-3" style="margin-left: 5%;">My Portfolio</span>
+          </a>
 
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 fs-5">
             <li><a href="#" class="nav-link px-3 link-secondary">Home</a></li>
             <li><a href="#" class="nav-link px-3 link-secondary">Service</a></li>
             <li><a href="#" class="nav-link px-3 link-secondary">Portfolio</a></li>
@@ -73,32 +76,45 @@
           </ul>
 
           <div class="col-md-3 text-end">
-            <!--<button type="button" class="btn btn-primary">Sign-up</button>-->
+            <button type="button" class="btn btn-warning" style="margin-right: 10%;">Greetings</button>
           </div>
         </header>
 
 
-        <div class="px-4 py-5 my-5 text-center">
-          <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-          <!-- <h1 class="display-6">Hello I'm</h1> -->
-          <p class="h3" style="color:gray;">Hello I'm</p>
-          <p class="h1">Ralph Anthony A. de Luna</p>
-          <hr class="divider">
-          <div class="col-lg-6 mx-auto">
-            <p class="lead mb-8 fs-4">Winform C# | Android Java | IoT Developer</p>
-            <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-            </div> -->
+     
+        <hr class="divider">
+        <div class="row align-items-md-stretch" style="margin-left: 5%; margin-top: 5%; background-image: url({{url_for('static', filename='images/TopBG.png')}});">
+          <div class="col-md-6">
+            <div class="px-4 py-5 my-5 text-center" style="margin-left: 20%;">
+              <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+              <!-- <h1 class="display-6">Hello I'm</h1> -->
+              <p class="h3" style="color:gray;">Hello I'm</p>
+              <p class="h1">Ralph Anthony A.</p>
+              <p class="h1">de Luna</p>
+              <hr class="divider">
+              <div class="col-lg-6 mx-auto">
+                <p class="lead mb-8 fs-5" style="color: rgb(230, 114, 38);"><b>C# | Android Java | IoT Developer</b></p>
+              </div>
+              <hr class="divider">
+              <div> 
+                <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right:30px;"></a>
+                <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+                <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+                <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+              </div>
+            </div>
           </div>
-          <hr class="divider">
-          <div> 
-            <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:36px;color: black; margin-right:30px;"></a>
-            <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:36px;color: black; margin-right: 30px;"></a>
-            <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:36px;color: black; margin-right: 30px;"></a>
-            <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:36px;color: black; margin-right: 30px;"></a>
+          <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/MyPhoto.png') }}"  class="img-fluid" alt="...">
           </div>
         </div>
+
+        <hr class="divider">
+        <hr class="divider">
+
+        
+
+
       </div>
     </main>
   
