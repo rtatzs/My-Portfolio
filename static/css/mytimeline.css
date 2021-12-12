@@ -1,7 +1,18 @@
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .timeline_date 
 {
     font-weight: normal;
+    color: rgb(230, 114, 38);
+
+}
+
+.contact_detail 
+{
+    font-weight:lighter;
     color: rgb(230, 114, 38);
 
 }
