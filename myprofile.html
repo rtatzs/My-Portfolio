@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/headers.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/heroes.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static', filename='css/features.css') }}" rel="stylesheet">
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -76,6 +73,30 @@
       <symbol id="geo-fill" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
       </symbol>
+    </svg>
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="bootstrap" viewBox="0 0 118 94">
         <title>Bootstrap</title>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
@@ -99,229 +120,108 @@
       </symbol>
     </svg>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      .navbar-brand
-      {
-        font-size: larger;
-      }
-
-      .navbar-collapse
-      {
-        font-size: large;
-        font-weight: bold;
-        margin-left: 15%;
-        
-      }
-
-  
-
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-    </style>
-  </head>
-  
-  <body>
     <main>
-      <nav class="navbar navbar-expand-xl navbar-light bg-light rounded fixed-top" aria-label="Sixth navbar example">
-       
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"> 
-            <image src="{{ url_for('static', filename='images/user.png') }}" style="width: 40px; height:40px;"/>
-            <span class="fs-3" style=" vertical-align: middle;color: black;"> My Portfolio</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          
-          <div class="collapse navbar-collapse" id="navbarsExample06">
-            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Me</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Service</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Contact</a>
-              </li>
-            </ul>
-            <div class="col-md-3 text-end">
-              <button type="button" class="btn btn-warning" style="margin-right: 10%;">Greetings</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div class="p-5 mb-4 bg-light rounded-3" style="margin-left: 5%; margin-right: 5%;">
-        <div class="row align-items-md-stretch" style="background-image: url({{url_for('static', filename='images/TopBG.png')}});">
-            <div class="col-md-6" style="margin-top: 15;float: right;">
-              <div class="px-4 py-5 my-5 text-center">
-                <p class="h3" style="color:rgb(148, 143, 143);"><i>Hi I'm</i></p>
-                <p class="h1">Ralph Anthony A.</p>
-                <p class="h1">de Luna</p>
-                <hr class="divider">
-                <div class="col-lg-6 mx-auto">
-                  <p class="lead mb-8 fs-6" style="color: rgb(230, 114, 38);"><b>Winforms C# | Android Java | SQL DB Admin | IoT Developer</b></p>
-                </div>
-                <hr class="divider">
-                <div> 
-                  <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right:30px;"></a>
-                  <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
-                  <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
-                  <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <img src="{{ url_for('static', filename='images/MyPhoto.png') }}"  style="width: 80%;float: right;" class="img-fluid" alt="...">
-            </div>
-        </div>
-      </div>
-
       <div class="container">
-        <div class="container-fluid py-5">
-          <h1 class="display-6 fs-fw-bold">About me</h1>
-          <hr class="my-6">
-          <p class="col-md-8 fs-5">I spent five years maintaining a Quality Assurance System of an ISO-certified client that produces electronics for Aviation. I am well acquainted with the manufacturing environment from onsite deployments. My recent work involves the development of software for the Internet of Things (IoT) which includes reading data from sensors and controlling field devices. I am eager to learn and can work with less supervision. You can expect me to have initiative.</p>
-          <figure class="text-center">
-            <blockquote class="blockquote">
-              <p>"It is always cheaper to do the job right the first time."</p>
-            </blockquote>
-            <figcaption class="blockquote-footer"> Phil Crosby <cite title="Source Title">: Zero Defects Program</cite>
-            </figcaption>
-          </figure>
-          
-          <button class="btn btn-warning btn-lg" type="button">My Portfolio</button>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom fixed-top" style="background-color: whitesmoke;">
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <image src="{{ url_for('static', filename='images/user.png') }}" style="width: 40px; height:40px;"/>
+            <span class="fs-4">&nbsp;My Portfolio</span>
+          </a>
+
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 fs-5">
+            <li><a href="#" class="nav-link px-3 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-3 link-secondary">Service</a></li>
+            <li><a href="#" class="nav-link px-3 link-secondary">Portfolio</a></li>
+            <li><a href="#" class="nav-link px-3 link-secondary">Resume</a></li>
+            <li><a href="#" class="nav-link px-3 link-secondary">Contact</a></li>
+          </ul>
+
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-warning" style="margin-right: 10%;">Greetings</button>
+          </div>
+        </header>
+        <div class="row align-items-md-stretch" style="background-image: url({{url_for('static', filename='images/TopBG.png')}});">
+          <div class="col-md-6">
+            <div class="px-4 py-5 my-5 text-center">
+              <p class="h3" style="color:gray;">Hello I'm</p>
+              <p class="h1">Ralph Anthony A.</p>
+              <p class="h1">de Luna</p>
+              <hr class="divider">
+              <div class="col-lg-6 mx-auto">
+                <p class="lead mb-8 fs-6" style="color: rgb(230, 114, 38);"><b>Winforms C# | Android Java | SQL DB Admin | IoT Developer</b></p>
+              </div>
+              <hr class="divider">
+              <div> 
+                <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right:30px;"></a>
+                <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+                <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+                <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:20px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/MyPhoto.png') }}"  class="img-fluid" alt="...">
+          </div>
         </div>
-    
-        <div class="container-fluid py-5">
-          <h1 class="display-6 fs-fw-bold">Services</h1> 
-          <div class="container" id="featured-3">
-            <hr class="my-6">
-            <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/work-in-progress.png') }}" style="width: 70px; height:70px;"/>      
-                <h3>5 Major Projects</h3>
-                <p>Having crucial role involving planning, system design, development, implementation, quality assurance, deployment and maintenance of projects. </p>
-          
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/investigation.png') }}" style="width: 70px; height:70px;"/>
-                <h3>2 Yrs in Research</h3>
-                <p>Spent two years designing and developing softwares for IoT and connection to PLC. This includes negotiating hardware supplier locally and overseas.</p>  
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/handshake.png') }}" style="width: 70px; height:70px;"/>
-                <h2>10,800 Hrs CRM</h2>
-                <p>Has five years experience handling customer relation through call, email and onsite deployments.</p>
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/strategy.png') }}" style="width: 70px; height:70px;"/>
-                <h2>2 Yrs Supervisory</h2>
-                <p>Has experience in handling employees and performing management related tasks. This include scheduling projects and monitoring maintenance hours.</p>
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/plant.png') }}" style="width: 70px; height:70px;"/>
-                <h2>Active Participant</h2>
-                <p>Active participation to company actvities this includes outing and specially community services.</p>
+
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-6 fs-fw-bold">About me</h1>
+            <p class="col-md-8 fs-5">I spent five years maintaining a Quality Assurance System of an ISO-certified client that produces electronics for Aviation. I am well acquainted with the manufacturing environment from onsite deployments. My recent work involves the development of software for the Internet of Things (IoT) which includes reading data from sensors and controlling field devices. I am eager to learn and can work with less supervision. You can expect me to have initiative.</p>
+            <figure class="text-center">
+              <blockquote class="blockquote">
+                <p>"It is always cheaper to do the job right the first time."</p>
+              </blockquote>
+              <figcaption class="blockquote-footer"> Phil Crosby <cite title="Source Title">: Zero Defects Program</cite>
+              </figcaption>
+            </figure>
+            
+            <button class="btn btn-warning btn-lg" type="button">My Portfolio</button>
+          </div>
+        </div>
+
+        <div class="p-5 mb-4">
+          <div class="container-fluid py-5">
+            <h1 class="display-6 fs-fw-bold">Service</h1>
+            <div class="container" id="featured-3">
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="feature col">
+                  <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+                  </div>
+                  <h3>5 Major Projects</h3>
+                  <p>Having crucial role involving planning, system design, development, implementation, quality assurance, deployment and maintenance of projects. </p>
+                
+                </div>
+                <div class="feature col">
+                  <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+                  </div>
+                  <h3>2 Yrs in Research</h3>
+                  <p>Spent two years designing and developing softwares for IoT and connection to PLC. This includes negotiating hardware supplier locally and overseas.</p>  
+                </div>
+                <div class="feature col">
+                  <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+                  </div>
+                  <h2>5 Yrs CRM</h2>
+                  <p>Has long experience handling customer relation through call, email and onsite deployments.</p>
+                </div>
+                <div class="feature col">
+                  <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+                  </div>
+                  <h2>2 Yrs Supervisor</h2>
+                  <p>Has experience in handling employees and performing management related tasks. This include scheduling projects and monitoring maintenance hours.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="container-fluid py-5">
-          <h1 class="display-6 fs-fw-bold">Portfolio</h1> 
-          <div class="container" id="featured-3">
-            <hr class="my-6">
-          
-            <div class="row" data-masonry='{"percentPosition": true }'>
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>          -->
-                  <image  src="{{ url_for('static', filename='images/Winforms.jpg') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">C# Winfoms</h5>
-                    <p class="card-text">Maintenance of winform application that reads data directly from a measuring microsccope. The system is for Quality Assurance.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/SQL Server.jpg') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">SQL Server Administrator</h5>
-                    <p class="card-text">Maintainance of SQL Databases. This includes sql server fine tuning and migration.</p>
-                  </div>
-                </div>
-              </div>
-           
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Android.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Android Java Developer</h5>
-                    <p class="card-text">Developed a mobile app for scanning of items withdrawn from warehouse and sending data to cloud server.</div>
-                </div>
-              </div>
 
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/noderead.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">IoT with Node JS & Python</h5>
-                    <p class="card-text">Development of Linkage to IoT software providers with creators basing from Japan.</p>
-                  </div>
-                </div>
-              </div>  
-
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Modbus.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Internet of Things</h5>
-                    <p class="card-text">Development and client demonstration of IoT application to manufacturing proof of concent. Includes wiring sensor and communication of field devices via Modbus RTU RS485 and development of REST API to access field devices data with less to none plc programming.</p>
-                    <a href="https://youtu.be/twWxX3Yu1wM">Simulation</a>
-                  </div>
-                </div>
-              </div>  
-
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Flask.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Flask Application</h5>
-                    <p class="card-text">This Portfolio website is created using flask in Python. Source code is public and available in my github.</p>
-                    <a href="https://github.com/rtatzs/My-Portfolio">Github Link</a>
-                  </div>
-                </div>
-              </div> 
-              
-            </div>
-          </div>
-        </div>
-      </div>      
+      </div>
     </main>
+  
   </body>
 </html>
