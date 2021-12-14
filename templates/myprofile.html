@@ -134,6 +134,9 @@
                 <div> 
                   <p class="fa fa-phone" style="font-size:20px;color: rgb(230, 114, 38); margin-right:30px;"> 
                   <a href="" style="font-size:medium; color: rgb(39, 39, 39);">+63915 259 3599</a>           
+                 
+                </div>
+                <div>
                   <p class="fa fa-skype" style="font-size:18px;color: rgb(230, 114, 38); margin-right: 30px;">
                     <a href="" style="font-size: medium; color: rgb(39, 39, 39);">dev1506ralphanthony</a>  
                 </div>
@@ -142,10 +145,10 @@
                     <a href="" style="font-size: medium; color: rgb(39, 39, 39);">ralph.deluna.rtatzs@gmail.com</a>  
                 </div>
                 <div style="margin-top: 20px;"> 
-                  <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right:30px;"></a>
-                  <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
-                  <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
-                  <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 30px;"></a>
+                  <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right:10px;"></a>
+                  <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
+                  <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
+                  <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
                 </div>
               </div>
             </div>
@@ -407,21 +410,21 @@
             </div>
           </div>
 
-          <div class="container my-5">
-            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-              <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h4 class="display-4 fw-bold lh-6">Download My Resume</h4>
-                <p class="lead">If you are interested in my other information. Download my resume.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                  <a href="{{ url_for('static', filename='files/2021 Resume - Ralph Anthony A. de Luna.pdf') }}" class="btn btn-warning btn-lg" type="button">DOWNLOAD</a>
-                </div>
+
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{{ url_for('static', filename='images/myResume.png') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
               </div>
-              <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                  <img class="rounded-lg-3" src="{{ url_for('static', filename='images/myResume.png') }}" alt="" width="720">
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Download my resume.</h1>
+                <p class="lead">If you are interested in my other information.you can click the button below.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <a href="{{ url_for('static', filename='files/2021 Resume - Ralph Anthony A. de Luna.pdf') }}" class="btn btn-warning btn-lg" type="button"><b>Link</b></a>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="container">
