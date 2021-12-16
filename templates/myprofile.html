@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/mytimeline.css') }}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
@@ -31,6 +34,11 @@
 
 
     <style>
+      .w3-lobster {
+        font-family: "Lobster", serif;
+
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -95,8 +103,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-  
-          
+
           <div class="collapse navbar-collapse" id="navbarsExample06">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
               <li class="nav-item">
@@ -119,13 +126,17 @@
         </div>
       </nav>
 
-      <div class="p-5 mb-4 bg-light rounded-3" >
+      <div class="p-5 mb-4 bg-light rounded-3" style="background-position: center;   background-color: rgba(255,255,255,0.1); background-size: cover; background-image: url({{ url_for('static', filename='images/coverBG.png') }});">
         <div class="row align-items-md-stretch">
             <div class="col-md-6" style="margin-top: 15;float: right;">
               <div class="px-4 py-5 my-5 text-center">
-                <p class="h3" style="color:rgb(148, 143, 143);"><i>Hi I'm</i></p>
-                <p class="h1">Ralph Anthony A.</p>
-                <p class="h1">de Luna</p>
+                <div class="w3-container w3-cursive">
+                  <p style="color:rgb(71, 71, 71); font-size: 25px;"><i>Hi I'm</i></p>
+                </div>
+                <div class="w3-container w3-lobster">
+                  <p class="h1" style="font-size: 45px;">Ralph Anthony</p>
+                </div>
+                
                 <hr class="divider">
                 <div class="col-lg-6 mx-auto">
                   <p class="lead mb-8 fs-6" style="color: rgb(230, 114, 38);"><b>Winforms C# | Android Java | SQL DB Admin | IoT Developer</b></p>
@@ -149,7 +160,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6" style="margin-top: 20%px;">
               <img src="{{ url_for('static', filename='images/MyPhoto.png') }}"  style="width: 80%;" class="img-fluid" alt="...">
             </div>
@@ -417,7 +427,7 @@
                 <h1 class="display-5 fw-bold lh-1 mb-3">Download my resume.</h1>
                 <p class="lead">If you are interested in my other information.you can click the button below.</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <a href="{{ url_for('static', filename='files/2021 Resume - Ralph Anthony A. de Luna.pdf') }}" class="btn btn-warning btn-lg" type="button"><b>Link</b></a>
+                  <a href="{{ url_for('static', filename='files/Resume - Ralph Anthony A. de Luna.pdf') }}" class="btn btn-warning btn-lg" type="button"><b>Link</b></a>
                 </div>
               </div>
             </div>
