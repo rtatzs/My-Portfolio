@@ -1,0 +1,125 @@
+.w3-lobster {
+    font-family: "Lobster", serif;
+
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .navbar-brand
+  {
+    font-size: larger;
+  }
+
+  .navbar-collapse
+  {
+    font-size: large;
+    font-weight: bold;
+    margin-left: 16%;
+    
+  }
+
+  .major-contact 
+  {
+    font-size:17px;
+    color: rgb(230, 114, 38); 
+  }
+
+  .web-links 
+  {
+    font-size:23px;
+    color: rgb(230, 114, 38); 
+    margin-right: 10px;
+
+  }
+
+  .skills:hover
+  {
+    color: gray; 
+    font-weight:lighter;
+    font-style: oblique;
+  }
+
+  .profile-name:hover
+  {
+    font-style: oblique;
+    color: gray;
+  }
+
+  .web-links:hover
+  {
+    color: gainsboro;
+  }
+
+  .edu-head
+  {
+    font-weight:normal; 
+    color:rgb(230, 114, 38);
+  }
+
+  .edu-subdetail
+  {
+    font-weight: normal;
+    color: gray;
+  }
+
+  .focused-text:hover
+  {
+    color: rgb(230, 114, 38); 
+  }
+
+  .major-contact:hover
+  {
+    color: rgb(230, 114, 38); 
+    font-style: oblique;
+  }
+
+  .my-resume-link:hover
+  {
+    font-weight: bold;
+    color: orange;
+  }
+
+  .profile-pic
+  {
+    width: 80%;
+  }
+
+  .award-img 
+  {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 60%; 
+    height:60%;
+  }
+
+  .portfolio-img
+  {
+    width: 100%; 
+    height:200px;
+  }
+
+  .exp-years 
+  {
+    font-weight:normal; 
+    color:rgb(230, 114, 38);
+  }
+
+  .ex-company
+  {
+    font-weight: normal;
+    color: gray;
+  }
+
+  @media (min-width: 768px) 
+  {
+    .bd-placeholder-img-lg 
+    {
+      font-size: 3.5rem;
+    }
+  }

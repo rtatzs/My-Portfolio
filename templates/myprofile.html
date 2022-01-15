@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
+    <meta name="author" content="">
+    <meta name="generator" content="">
     <title>Ralph · Portfolio</title>
 
+    <link rel="icon" href="{{ url_for('static', filename='images/user.png')}}">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/headers.css') }}">
@@ -19,7 +20,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}"/>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,42 +33,6 @@
       $('#myModal').on('shown.bs.modal', function () { $('#myInput').trigger('focus')})
     </script>
 
-
-    <style>
-      .w3-lobster {
-        font-family: "Lobster", serif;
-
-      }
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      .navbar-brand
-      {
-        font-size: larger;
-      }
-
-      .navbar-collapse
-      {
-        font-size: large;
-        font-weight: bold;
-        margin-left: 16%;
-        
-      }
-
-      @media (min-width: 768px) 
-      {
-        .bd-placeholder-img-lg 
-        {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
   </head>
   
   <body>
@@ -76,13 +41,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Hello There!</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">{{myprofile.flash_greeting_header}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <h6>I'm Ralph. Thank you for checking my portfolio.</h6>
+            <h6>{{myprofile.flash_greeting}}</h6>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -126,42 +91,43 @@
         </div>
       </nav>
 
-      <div class="p-5 mb-4 bg-light rounded-3" style="background-position: center;   background-color: rgba(255,255,255,0.1); background-size: cover; background-image: url({{ url_for('static', filename='images/coverBG.png') }});">
+      <div class="p-5 mb-4 bg-light rounded-3" style="background-position: center;   background-color: rgba(255,255,255,0.1); background-size: cover; background-image: url({{ url_for('static', filename='')}}{{myprofile.coverimage}});">
         <div class="row align-items-md-stretch">
             <div class="col-md-6" style="margin-top: 15;float: right;">
               <div class="px-4 py-5 my-5 text-center">
                 <div class="w3-container w3-cursive">
-                  <p style="color:rgb(71, 71, 71); font-size: 25px;"><i>Hi I'm</i></p>
+                  <p style="color:rgb(71, 71, 71); font-size: 25px;"><i>{{myprofile.greeting}}</i></p>
                 </div>
                 <div class="w3-container w3-lobster">
-                  <p class="h1" style="font-size: 45px;">Ralph Anthony</p>
+                  <p class="h1 profile-name" style="font-size: 45px;">{{myprofile.firstname}}</p>
                 </div>
                 
                 <hr class="divider">
                 <div class="col-lg-6 mx-auto">
-                  <p class="lead mb-8 fs-6" style="color: rgb(230, 114, 38);"><b>Winforms C# | Android Java | SQL DB Admin | IoT Developer</b></p>
+                  <p class="lead mb-8 fs-6" style="color: rgb(230, 114, 38);">
+                    <b>
+                      {% for skill in myprofile.highlighted_skills %}
+                      <a class="skills" href="{{skill.link}}">{{skill.title}}</a>
+                      {% if not loop.last %} |{% endif %}
+                      {% endfor %}
+                    </b>
+                  </p>
                 </div>
                 <hr class="divider">
-                <div> 
-                  <p class="fa fa-phone" style="font-size:17px;color: rgb(230, 114, 38);"> +63915 259 3599</p> 
-                 
-                </div>
-                <div>
-                  <p class="fa fa-skype" style="font-size:17px;color: rgb(230, 114, 38);">&nbsp;dev1506ralphanthony</p>
-                </div>
-                <div>
-                  <p class="fa fa-envelope" style="font-size:17px;color: rgb(230, 114, 38);">&nbsp;ralph.deluna.rtatzs@gmail.com</p>
-                </div>
-                <div style="margin-top: 10px;"> 
-                  <a href="https://linkedin.com/in/ralph-anthony-de-luna-73a91a16a" class="fa fa-linkedin-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right:10px;"></a>
-                  <a href="https://web.facebook.com/Rtatzs/" class="fa fa-facebook-square" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
-                  <a href="https://www.instagram.com/ralphtatzs/" class="fa fa-instagram" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
-                  <a href="https://github.com/rtatzs" class="fa fa-github" style="font-size:23px;color: rgb(230, 114, 38); margin-right: 10px;"></a>
+                  {% for contact in myprofile.contactinfo %}
+                  <div> 
+                    <p class="{{contact.icon}} major-contact">&nbsp;{{contact.detail}}</p> 
+                  </div>
+                  {% endfor %}
+                <div style="margin-top: 10px;">
+                  {% for link in myprofile.links %}
+                  <a href="{{link.link}}" class="{{link.icon}} web-links"></a>
+                  {% endfor %}
                 </div>
               </div>
             </div>
             <div class="col-md-6" style="margin-top: 20%px;">
-              <img src="{{ url_for('static', filename='images/MyPhoto2.png') }}"  style="width: 80%;" class="img-fluid" alt="...">
+              <img src="{{url_for('static', filename='')}}{{myprofile.picture}}" class="img-fluid profile-pic" alt="...">
             </div>
         </div>
       </div>
@@ -170,24 +136,19 @@
         <div class="container-fluid py-5"  >
           <h1 class="display-6 fs-fw-bold" style="margin-top: 2%;">About me</h1>
           <hr class="my-6">
-          
-
           <div class="p-5 mb-4 bg-light rounded-3" >
             <div class="row align-items-md-stretch">
                 <div class="col-md-6">
-                  <p class="fs-5">I spent five years maintaining a Quality Assurance System of an ISO-certified client that produces electronics for Aviation. I am well acquainted with the manufacturing environment from onsite deployments. My recent work involves the development of software for the Internet of Things (IoT) which includes reading data from sensors and controlling field devices. I am eager to learn and can work with less supervision. You can expect me to have initiative.</p>
-               
+                  <p class="fs-5 text-justify">{{myprofile.aboutme.aboutme}}</p>
                   <a href="#myResume" class="btn btn-warning btn-lg" type="button">My Resume</a>
                 </div>
-    
                 <div class="col-md-6">
-                  <img src="{{ url_for('static', filename='images/Mountain.png') }}"  style="float: right; padding-bottom: 5%;" class="img-fluid" alt="...">
-
+                  <img src="{{url_for('static', filename='')}}{{myprofile.aboutme.sidepic}}"  style="float: right; padding-bottom: 5%;" class="img-fluid" alt="...">
                   <figure class="text-center">
                     <blockquote class="blockquote">
-                      <p>"It is always cheaper to do the job right the first time."</p>
+                      <p>"{{myprofile.aboutme.qoute}}"</p>
                     </blockquote>
-                    <figcaption class="blockquote-footer"> Phil Crosby <cite title="Source Title">: Zero Defects Program</cite>
+                    <figcaption class="blockquote-footer">{{myprofile.aboutme.author}}<cite title="Source Title">: {{myprofile.aboutme.source}}</cite>
                     </figcaption>
                   </figure>
                 </div>
@@ -200,32 +161,13 @@
           <div class="container" id="featured-3">
             <hr class="my-6">
             <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
+              {% for service in myprofile.services %}
               <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/work-in-progress.png') }}" style="width: 70px; height:70px;"/>      
-                <h3>5 Major Projects</h3>
-                <p>Having crucial role involving planning, system design, development, implementation, quality assurance, deployment and maintenance of projects. </p>
-          
+                <image  src="{{url_for('static', filename='')}}{{service.image}}" style="width: 70px; height:70px;"/>      
+                <h3 class="focused-text">{{service.title}}</h3>
+                <p>{{service.description}}</p>
               </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/investigation.png') }}" style="width: 70px; height:70px;"/>
-                <h3>2 Yrs in Research</h3>
-                <p>Spent two years designing and developing softwares for IoT and connection to PLC. This includes negotiating hardware supplier locally and overseas.</p>  
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/handshake.png') }}" style="width: 70px; height:70px;"/>
-                <h2>10,800 Hrs CRM</h2>
-                <p>Has five years experience handling customer relation through call, email and onsite deployments.</p>
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/strategy.png') }}" style="width: 70px; height:70px;"/>
-                <h2>2 Yrs Supervisory</h2>
-                <p>Has experience in handling employees and performing management related tasks. This includes scheduling projects and monitoring maintenance hours.</p>
-              </div>
-              <div class="feature col">
-                <image  src="{{ url_for('static', filename='images/plant.png') }}" style="width: 70px; height:70px;"/>
-                <h2>Active Participant</h2>
-                <p>Active participation to company actvities including outing and community extension services.</p>
-              </div>
+              {% endfor %}
             </div>
           </div>
 
@@ -234,52 +176,20 @@
             <hr class="my-6">
             <div class="album py-5 bg-light">
               <div class="container">
-          
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                  {% for award in myprofile.awards %}
                   <div class="col">
                     <div class="card shadow-sm">
                       <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
-                        <h5 class="card-title"><b>Deployment Award  2016</b></h5>
+                        <h5 class="card-title focused-text"><b>{{award.title}}</b></h5>
                       </div>
-                      <image  src="{{ url_for('static', filename='images/2016.png') }}" style="margin-left: auto;margin-right: auto; width: 60%; height:60%;"/>  
+                      <image class="award-img" src="{{ url_for('static', filename='')}}{{award.image}}"/>  
                       <div class="card-body">
-                        <p class="card-text">Recognition for exemplary performance in the ERP Project - Quality Assurance System Enhancement.</p>
+                        <p class="card-text">{{award.description}}</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
-                        <h5 class="card-title"><b>Pedestal Award 2018</b></h5>
-                      </div>
-                      <image  src="{{ url_for('static', filename='images/2018.png') }}" style="margin-left: auto;margin-right: auto; width: 60%; height:60%;"/>  
-                      <div class="card-body">
-                        <p class="card-text">Recognition for exemplary performance for year 2018.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
-                        <h5 class="card-title"><b>Service Award 2020</b></h5>
-                      </div>
-                      <image  src="{{ url_for('static', filename='images/2020.png') }}" style="margin-left: auto;margin-right: auto; width: 60%; height:60%;"/>  
-                      <div class="card-body">
-                        <p class="card-text">Recognition for the invaluable service, dedication and loyalty rendered to the company.  </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
-                        <h5 class="card-title"><b>Pedestal Award 2021</b></h5>
-                      </div>
-                      <image  src="{{ url_for('static', filename='images/2021.png') }}" style="margin-left: auto;margin-right: auto; width: 60%; height:60%;"/>  
-                      <div class="card-body">
-                        <p class="card-text">For closing a JAE AUTO-PCR Stamping Development and Implementation and Android Application Development sold and deployed to Medilinx.</p>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -292,68 +202,21 @@
             <hr class="my-6">
           
             <div class="row" data-masonry='{"percentPosition": true }'>
+              {% for work in myprofile.portfolio %}  
               <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>          -->
-                  <image  src="{{ url_for('static', filename='images/Winforms.jpg') }}" style="width: 100%; height:200px;"/>
+                  <image class="portfolio-img" src="{{url_for('static', filename='')}}{{work.image}}"/>
                   <div class="card-body">
-                    <h5 class="card-title">C# Winfoms</h5>
-                    <p class="card-text">Maintenance of winform application that reads data directly from a measuring microsccope. The system is for Quality Assurance.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/SQL Server.jpg') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">SQL Server Administrator</h5>
-                    <p class="card-text">Maintainance of SQL Databases. This includes sql server fine tuning and migration.</p>
-                  </div>
-                </div>
-              </div>
-           
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Android.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Android Java Developer</h5>
-                    <p class="card-text">Developed a mobile app for scanning of items withdrawn from warehouse and sending data to cloud server.</div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/noderead.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">IoT with Node JS & Python</h5>
-                    <p class="card-text">Development of Linkage to IoT software providers with creators basing from Japan.</p>
-                  </div>
-                </div>
-              </div>  
-
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Modbus.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Internet of Things</h5>
-                    <p class="card-text">Development and client demonstration of IoT application to manufacturing (proof of concent). This Includes wiring sensor and connection to field devices via Modbus RTU RS485. I developed a REST API to access field devices data with less to none plc programming.</p>
-                    <a  class="timeline_date" href="https://youtu.be/twWxX3Yu1wM">Simulation</a>
-                  </div>
-                </div>
-              </div>  
-
-              <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                  <image  src="{{ url_for('static', filename='images/Flask.png') }}" style="width: 100%; height:200px;"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Flask Application</h5>
-                    <p class="card-text">This Portfolio website is created using flask in Python. Source code is public and available in my github.</p>
-                    <a class="timeline_date" href="https://github.com/rtatzs/My-Portfolio">Github Link</a>
+                    <h5 class="card-title focused-text"><b>{{work.title}}</b></h5>
+                    <p class="card-text">{{work.description}}</p>
+                    <!-- checks if there is link, if there is display-->
+                    {% if work.link != '' %}
+                      <a class="timeline_date skills" href="{{work.link}}">Project Link</a>
+                    {% endif %}
                   </div>
                 </div>
               </div> 
-              
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -366,25 +229,17 @@
                 <div class="col-md-5">
                   <h4>Education</h4>
                   <ul class="timeline">
+                    {% for edu in myprofile.educations %}  
                     <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>College</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">2010 - 2015</h6>
-                      <h6>University of Scan Carlos</h6>
-                      <h6 style="font-weight: normal;color: gray;">Bacheclor of Science in Computer Science</h6>
+                      <a class="timeline_date my-resume-link" target="_blank" href="#"><b>{{edu.level}}</b></a>
+                      <h6 class="edu-head">{{edu.years}}</h6>
+                      <h6>{{edu.school}}</h6>
+                      {% if edu.course != '' %}
+                      <h6 class="edu-subdetail">{{edu.course}}</h6>
+                      {% endif %}
                       <div></div>
                     </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>High School</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">2006 - 2010</h6>
-                      <h6>Mandaue City Comprehensive National High School</h6>
-                      <div></div>
-                    </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Primary School</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">2000 - 2006</h6>
-                      <h6>Mandaue City Central School</h6>
-                      <div></div>
-                    </li>
+                    {% endfor %}
                   </ul>
                 </div>
 
@@ -394,26 +249,17 @@
                 <div class="col-md-5">
                   <h4>Work Experience</h4>
                   <ul class="timeline">
+                    {% for exp in myprofile.experience %}  
                     <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Supervisor</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">Jan 2020 - Present</h6>
-                      <h6>N-PAX Cebu Corporation</h6>
+                      <a class="timeline_date my-resume-link" target="_blank" href="#"><b>{{exp.position}}</b></a>
+                      <h6 class="edu-head">{{exp.duration}}</h6>
+                      {% if exp.present == 'TRUE' %}
+                      <h6>{{exp.company}}</h6>
+                      {% else %}
+                      <h6 class="ex-company">{{exp.company}}</h6>
+                      {% endif %}
                     </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Senior Programmer</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">Jan 2018 - Dec 2019</h6>
-                      <h6 style="font-weight: normal;color: gray;">N-PAX Cebu Corporation</h6>
-                    </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Programmer</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">Nov 2015 - Jan 2018</h6>
-                      <h6 style="font-weight: normal;color: gray;">N-PAX Cebu Corporation</h6>
-                    </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Intern</b></a>
-                      <h6 style="font-weight:normal; color:rgb(230, 114, 38);">Nov 2015 - Jun 2016</h6>
-                      <h6 style="font-weight: normal;color: gray;">N-PAX Cebu Corporation</h6>
-                    </li>
+                    {% endfor %}
                   </ul>
                 </div>
             </div>
@@ -423,51 +269,23 @@
             <div class="row align-items-md-stretch">
                 
                 <div class="col-md-6">
-                  <img src="{{ url_for('static', filename='images/Wallpaper.png') }}" class="img-fluid" alt="...">
+                  <img src="{{url_for('static', filename='')}}{{myprofile.skill_image}}" class="img-fluid" alt="...">
                 </div>
                 <div class="col-md-6">
                   <h4>My Skill Set</h4>
                   <ul class="timeline">
+                    {% for lang in myprofile.skills %}  
                     <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Winform C#</b></a>
-                      <a class="float-right" href="#"><b>90%</b></a>
-                      <h6 style="font-weight: normal;color: gray;">Development <var>(5 Years)</var></h6>
+                      <a class="timeline_date my-resume-link" target="_blank" href="#"><b>{{lang.language}}</b></a>
+                      <a class="float-right my-resume-link" href="#"><b>{{lang.percentage}}%</b></a>
+                      <h6 >{{lang.description}} <var>({{lang.years}} Years)</var></h6>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%; background-color:orange !important;">
+                        <div class="progress-bar" role="progressbar"  aria-valuenow="{{lang.percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{lang.percentage}}%; background-color:orange !important;">
                         </div>
                       </div>
                       <div></div>
                     </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>SQL Server</b></a>
-                      <a class="float-right" href="#"><b>90%</b></a>
-                      <h6 style="font-weight: normal;color: gray;">Design and Database Administration <var>(5 Years)</var></h6>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:90%; background-color:orange !important;">
-                        </div>
-                      </div>
-                      <div></div>
-                    </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>Android Java</b></a>
-                      <a class="float-right" href="#"><b>60%</b></a>
-                      <h6 style="font-weight: normal;color: gray;">Development <var>(1.5 Year)</var></h6>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%; background-color:orange !important;">
-                        </div>
-                      </div>
-                      <div></div>
-                    </li>
-                    <li>
-                      <a class="timeline_date" target="_blank" href="#myResume"><b>(Python, Node JS, Arduino, PLC)</b></a>
-                      <a class="float-right" href="#"><b>50%</b></a>
-                      <h6 style="font-weight: normal;color: gray;">Design and Development <var>(1.5 Year)</var></h6>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%; background-color:orange !important;">
-                        </div>
-                      </div>
-                      <div></div>
-                    </li>
+                    {% endfor %}
                   </ul>
                 </div>
             </div>
@@ -477,13 +295,13 @@
           <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div class="col-10 col-sm-8 col-lg-6">
-                <img src="{{ url_for('static', filename='images/myResume.png') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                <img src="{{ url_for('static', filename='')}}{{myprofile.resume_image}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
               </div>
               <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Download my resume.</h1>
-                <p class="lead">If you are interested in my other information.you can click the button below.</p>
+                <h1 class="display-5 fw-bold lh-1 mb-3">{{myprofile.resume_header}}</h1>
+                <p class="lead">{{myprofile.resume_desc}}</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <a href="{{ url_for('static', filename='files/Resume - Ralph Anthony A. de Luna 2022.pdf') }}" class="btn btn-warning btn-lg" type="button"><b>Link</b></a>
+                  <a href="{{ url_for('static', filename='')}}{{myprofile.resume_link}}" class="btn btn-warning btn-lg" type="button"><b>Link</b></a>
                 </div>
               </div>
             </div>
@@ -494,10 +312,10 @@
           <footer class="py-3 my-4">
             <figure class="text-center">
               <blockquote class="blockquote">
-                <p>"Hoping you got what you came for."</p>
+                <p style="font-style: oblique;">"{{myprofile.postscript}}"</p>
               </blockquote>
             </figure>
-            <p class="text-center text-muted">&copy; 2021 My Portfolio</p>
+            <p class="text-center text-muted">&copy; {{myprofile.footer}}</p>
           </footer>
         </div>
       </div>      
