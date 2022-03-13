@@ -26,63 +26,63 @@ def myprofile():
 	myprofile = getInitializeProfile()
 	return render_template("myprofile.html", myprofile = myprofile)
 
-@app.route("/readsheet")
-def GoogleSheetRead():
-	sheetID = request.args.get('SheetID', default='',type=str)
-	sheetRange = request.args.get('SheetRange', default='',type=str)
-	sheetread = sheet.values().get(spreadsheetId=sheetID,range=sheetRange).execute()
-	values = sheetread.get('values',[])
-	result = {"result": values}
-	return jsonify(result)
+# @app.route("/readsheet")
+# def GoogleSheetRead():
+# 	sheetID = request.args.get('SheetID', default='',type=str)
+# 	sheetRange = request.args.get('SheetRange', default='',type=str)
+# 	sheetread = sheet.values().get(spreadsheetId=sheetID,range=sheetRange).execute()
+# 	values = sheetread.get('values',[])
+# 	result = {"result": values}
+# 	return jsonify(result)
 
-@app.route("/writesheet",methods=['POST'])
-def GoogleSheetWrite():
-	data = json.loads(request.data.decode())
-	sheetID = data["sheetID"]
-	sheetRange = data["sheetRange"]
-	sheetValues = data["sheetValues"]
-	sheetDump = json.dumps(sheetValues)
-	sheetValues = json.loads(sheetDump)
-	requests = sheet.values().update(spreadsheetId=sheetID,
-                                 	range=sheetRange,
-                                 	valueInputOption="USER_ENTERED",
-                                 	body={"values": sheetValues}).execute()
-	result = {"result": requests}
-	return jsonify(result)	
+# @app.route("/writesheet",methods=['POST'])
+# def GoogleSheetWrite():
+# 	data = json.loads(request.data.decode())
+# 	sheetID = data["sheetID"]
+# 	sheetRange = data["sheetRange"]
+# 	sheetValues = data["sheetValues"]
+# 	sheetDump = json.dumps(sheetValues)
+# 	sheetValues = json.loads(sheetDump)
+# 	requests = sheet.values().update(spreadsheetId=sheetID,
+#                                  	range=sheetRange,
+#                                  	valueInputOption="USER_ENTERED",
+#                                  	body={"values": sheetValues}).execute()
+# 	result = {"result": requests}
+# 	return jsonify(result)	
 
-@app.route("/append", methods=['POST'])
-def GoogleSheetAppend():
-	data = json.loads(request.data.decode())
-	sheetID = data["sheetID"]
-	sheetRange = data["sheetRange"]
-	sheetValues = data["sheetValues"]
-	sheetDump = json.dumps(sheetValues)
-	sheetValues = json.loads(sheetDump)
+# @app.route("/append", methods=['POST'])
+# def GoogleSheetAppend():
+# 	data = json.loads(request.data.decode())
+# 	sheetID = data["sheetID"]
+# 	sheetRange = data["sheetRange"]
+# 	sheetValues = data["sheetValues"]
+# 	sheetDump = json.dumps(sheetValues)
+# 	sheetValues = json.loads(sheetDump)
 
-	#Gets Data before appending 
-	sheetread = sheet.values().get(spreadsheetId=sheetID,range=sheetRange).execute()
-	values = sheetread.get('values',[])
+# 	#Gets Data before appending 
+# 	sheetread = sheet.values().get(spreadsheetId=sheetID,range=sheetRange).execute()
+# 	values = sheetread.get('values',[])
 	
-	if not values:
-		print('UNINITIALIZED LIST')
-		#write the values as is
-		for i in range(len(sheetValues)):
-			sheetValues[i][0] = "="+sheetValues[i][0]
+# 	if not values:
+# 		print('UNINITIALIZED LIST')
+# 		#write the values as is
+# 		for i in range(len(sheetValues)):
+# 			sheetValues[i][0] = "="+sheetValues[i][0]
 
-		requests = sheet.values().update(spreadsheetId=sheetID,range=sheetRange,valueInputOption="USER_ENTERED",body={"values": sheetValues}).execute()
-		print(requests)
+# 		requests = sheet.values().update(spreadsheetId=sheetID,range=sheetRange,valueInputOption="USER_ENTERED",body={"values": sheetValues}).execute()
+# 		print(requests)
 
-	else:
-		for i in range(len(values)):
-			if values[i][0]!="":
-				values[i][0] = "="+values[i][0]+"+"+sheetValues[i][0]
-			else:
-				values[i][0] = "="+sheetValues[i][0]
+# 	else:
+# 		for i in range(len(values)):
+# 			if values[i][0]!="":
+# 				values[i][0] = "="+values[i][0]+"+"+sheetValues[i][0]
+# 			else:
+# 				values[i][0] = "="+sheetValues[i][0]
 
-			print(values[i][0])
+# 			print(values[i][0])
 		
-		print(values)
-		requests = sheet.values().update(spreadsheetId=sheetID,range=sheetRange,valueInputOption="USER_ENTERED",body={"values": values}).execute()
+# 		print(values)
+# 		requests = sheet.values().update(spreadsheetId=sheetID,range=sheetRange,valueInputOption="USER_ENTERED",body={"values": values}).execute()
 
-	result = {"result": requests}
-	return jsonify(result)	
+# 	result = {"result": requests}
+# 	return jsonify(result)	
