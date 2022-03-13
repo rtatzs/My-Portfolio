@@ -144,11 +144,13 @@ def getInitializeProfile():
     myprofile.awards.append(Awards("Service Award 2020","images/2020.png","Recognition for the invaluable service, dedication and loyalty rendered to the company."))
     myprofile.awards.append(Awards("Pedestal Award 2021","images/2021.png","For closing a JAE AUTO-PCR Stamping Development and Implementation and Android Application Development sold and deployed to Medilinx."))
 
-    myprofile.portfolio.append(Works("images/SQL Server.jpg","C# Winfoms","Maintenance of winform application that reads data directly from a measuring microsccope. The system is for Quality Assurance.",""))
+    myprofile.portfolio.append(Works("images/Winforms.jpg","C# Winfoms","Maintenance of winform application that reads data directly from a measuring microsccope. The system is for Quality Assurance.",""))
+    myprofile.portfolio.append(Works("images/SQL Server.jpg","SQL Server","Design, Maintenance and Optimization of SQL Database.",""))	
     myprofile.portfolio.append(Works("images/Android.png","Android Java Developer","Developed a mobile app for scanning of items withdrawn from warehouse and sending data to cloud server.",""))
     myprofile.portfolio.append(Works("images/noderead.png","IoT with Node JS & Python","Development of Linkage to IoT software providers with creators basing from Japan.",""))
     myprofile.portfolio.append(Works("images/Modbus.png","Internet of Things","Development and client demonstration of IoT application to manufacturing (proof of concent). This Includes wiring sensor and connection to field devices via Modbus RTU RS485. I developed a REST API to access field devices data with less to none plc programming.","https://youtu.be/twWxX3Yu1wM"))
     myprofile.portfolio.append(Works("images/Flask.png","Flask Application","This Portfolio website is created using flask in Python. Source code is public and available in my github.","https://github.com/rtatzs/My-Portfolio"))
+	
 
     myprofile.educations.append(Education("College","2010 - 2015","University of Scan Carlos","Bacheclor of Science in Computer Science"))
     myprofile.educations.append(Education("High School","2006 - 2010","Mandaue City Comprehensive National High School",""))
@@ -166,5 +168,5 @@ def getInitializeProfile():
     myprofile.skills.append(Skill("Node JS","Project Development","1.5","50"))
     myprofile.skills.append(Skill("Arduino","Project Development","1.5","50"))
     myprofile.skills.append(Skill("Keyence PLC","Design and Development","1.5","50"))
-
+    
     return myprofile
