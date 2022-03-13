@@ -103,7 +103,7 @@ def getInitializeProfile():
     myprofile.coverimage = 'images/coverBG.png'
     myprofile.picture = 'images/MyPhoto2.png'
     myprofile.greeting = "Hi! I'm"
-    myprofile.flash_greeting_header = "Hello There"
+    myprofile.flash_greeting_header = "Hello There!"
     myprofile.flash_greeting = "I'm Ralph. Thank you for checking my portfolio."
     myprofile.skill_image = 'images/Wallpaper.png'
     myprofile.resume_image = 'images/myResume.png'
