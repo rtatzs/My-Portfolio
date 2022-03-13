@@ -13,13 +13,13 @@ from google.oauth2 import service_account
 app = Flask(__name__)
 app.secret_key = "f5bb0c8de146c67b44babbf4e6584cc0"
 
-# SERVICE_ACCOUNT_FILE = "static/files/2c9c9cd97be2e079377d9dfb6c1139d8.json"
-# SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-# creds = None
-# creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-# SAMPLE_SPREADSHEET_ID = '1yNF_F7cLnsIWfTJ6gncb9ty_NMo039PStsxPmo2i1oo'
-# service = build("sheets", "v4", credentials=creds)
-# sheet = service.spreadsheets()
+SERVICE_ACCOUNT_FILE = "static/files/2c9c9cd97be2e079377d9dfb6c1139d8.json"
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+creds = None
+creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+SAMPLE_SPREADSHEET_ID = '1yNF_F7cLnsIWfTJ6gncb9ty_NMo039PStsxPmo2i1oo'
+service = build("sheets", "v4", credentials=creds)
+sheet = service.spreadsheets()
 
 @app.route("/MyProfile")
 def myprofile():
