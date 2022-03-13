@@ -5,10 +5,10 @@ from re import I
 from myprofilelib.profile import getInitializeProfile
 from pickle import NONE, TRUE
 from flask import Flask, render_template, request, flash, jsonify
-# from google.auth.transport.requests import Request
-# from google_auth_oauthlib.flow import InstalledAppFlow
-# from googleapiclient.discovery import build
-# from google.oauth2 import service_account
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
 
 app = Flask(__name__)
 app.secret_key = "f5bb0c8de146c67b44babbf4e6584cc0"
