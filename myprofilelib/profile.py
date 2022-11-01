@@ -150,7 +150,7 @@ def getInitializeProfile():
     myprofile.portfolio.append(Works("images/noderead.png","IoT with Node JS & Python","Development of Linkage to IoT software providers with creators basing from Japan.",""))
     myprofile.portfolio.append(Works("images/Modbus.png","Internet of Things","Development and client demonstration of IoT application to manufacturing (proof of concent). This Includes wiring sensor and connection to field devices via Modbus RTU RS485. I developed a REST API to access field devices data with less to none plc programming.","https://youtu.be/twWxX3Yu1wM"))
     myprofile.portfolio.append(Works("images/Flask.png","Flask Application","This Portfolio website is created using flask in Python. Source code is public and available in my github.","https://github.com/rtatzs/My-Portfolio"))
-    myprofile.portfolio.append(Works("images/bootstrap.png","Bootstrap & VueJS","Utilized in Node-RED UIBuilder for creating custom Web applications.","https://www.youtube.com/channel/UCQ8_TLgxzjN5737NJksuVjw/videos"))
+    myprofile.portfolio.append(Works("images/bootstrap2.png","Bootstrap & VueJS","Utilized in Node-RED UIBuilder for creating custom Web applications.","https://www.youtube.com/channel/UCQ8_TLgxzjN5737NJksuVjw/videos"))
     myprofile.portfolio.append(Works("images/OPCUA.png","Kepware OPCUA","Utilized in reading and writing PLC registers specifically Yaskawa and Keyence.",""))
 
     myprofile.educations.append(Education("College","2010 - 2015","University of Scan Carlos","Bacheclor of Science in Computer Science"))
@@ -166,8 +166,10 @@ def getInitializeProfile():
     myprofile.skills.append(Skill("SQL Server","Design and Database Administration","5","90"))
     myprofile.skills.append(Skill("Android Java","Development","1.5","60"))
     myprofile.skills.append(Skill("Python","Project Development","1.5","50"))
-    myprofile.skills.append(Skill("Node JS","Project Development","1.5","50"))
+    myprofile.skills.append(Skill("Node-RED","Project Development","2","80"))
+    myprofile.skills.append(Skill("Bootstrap + Vue","Design and Development","1.5","50"))	
     myprofile.skills.append(Skill("Arduino","Project Development","1.5","50"))
     myprofile.skills.append(Skill("Keyence PLC","Design and Development","1.5","50"))
-    
+    myprofile.skills.append(Skill("Kepware OPCUA","Design and Development","1.5","50"))
+
     return myprofile
