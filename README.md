@@ -1,5 +1,5 @@
-# greetingApp_FLASK
-a simple greeting app built with flask, ready to deploy to Heroku
+# My Portfolio App
+This is a flask app to know more about me.
 
 Migrated to pythonanywhere hope they allow access to google apis
 Link: https://rtatzs2016.pythonanywhere.com/ralphportfolio
