@@ -3,7 +3,7 @@ C:\Users\ralph\Projects\Python\My Portfolio>cd C:\Users\ralph\Projects\Python\My
 
 C:\Users\ralph\Projects\Python\My Portfolio>set FLASK_APP=app
 
-C:\Users\ralph\Projects\Python\My Portfolio>flask run
+C:\Users\ralph\Projects\Python\My Portfolio>flask run --host=0.0.0.0 --port=5000
  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
